@@ -217,8 +217,8 @@ function Show-Check {
     # LẤY THÔNG TIN CƠ BẢN
     $script:FULL_PK = Get-DecodedProductKey
     $tempPath = [System.IO.Path]::GetTempPath()
-    $licenseFile = Join-Path $tempPath "itso_license.txt"
-    $xprFile = Join-Path $tempPath "itso_xpr.txt"
+    $licenseFile = Join-Path $tempPath "mcwincheck_license.txt"
+    $xprFile = Join-Path $tempPath "mcwincheck_xpr.txt"
 
     Start-Process -FilePath "cscript" -ArgumentList "//Nologo `"$env:windir\system32\slmgr.vbs`" /dli" -RedirectStandardOutput $licenseFile -NoNewWindow -Wait
     Start-Process -FilePath "cscript" -ArgumentList "//Nologo `"$env:windir\system32\slmgr.vbs`" /xpr" -RedirectStandardOutput $xprFile -NoNewWindow -Wait
@@ -765,7 +765,7 @@ function Show-HowItWorks {
     Write-Host "=================================================="
     Write-Host "                  CÁCH THỨC HOẠT ĐỘNG"
     Write-Host "=================================================="
-    Write-Host "Tool ITSO (Bản 3.3) hoạt động dựa trên 5 cơ chế cốt lõi:"
+    Write-Host "MarcusFPS Windows Checker (Bản 3.6) hoạt động dựa trên 5 cơ chế cốt lõi:"
     Write-Host "1. QUÉT CHIP BIOS (Mainboard): Dùng WMI truy xuất sâu vào phần cứng lấy OEM Key."
     Write-Host "2. PHÂN TÍCH GIẤY PHÉP WINDOWS: Phân loại (Retail, OEM, MAK, KMS)."
     Write-Host "3. QUÉT TÌM DẤU VẾT CRACK: Kiểm tra Registry, Task, Services, Hosts và Lịch sử MAS/HWID."
